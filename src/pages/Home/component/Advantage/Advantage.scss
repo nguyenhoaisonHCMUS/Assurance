@@ -1,0 +1,47 @@
+.bg_advan {
+    position: relative;
+    height: 240px;
+    background-color: #cccccc4c;
+    margin-top: -5px;
+}
+
+.advantage {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 18px;
+    top: -90px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 95%;
+    max-width: 1048px;
+    padding: 40px;
+}
+.advan_header {
+    margin-right: 20px;
+}
+.advan_more {
+    display: flex;
+}
+.advan_more_s {
+    flex: 1;
+}
+.advan_more_paicon {
+    padding: 10px;
+    border-radius: 13px;
+    background-color: #fef7f3;
+}
+.advan_more_icon {
+}
+.advan_more_heading {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 16px 0 4px;
+}
+.advan_more_content {
+    line-height: 24px;
+    font-size: 16px;
+}

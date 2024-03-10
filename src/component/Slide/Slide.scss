@@ -1,0 +1,21 @@
+.slide_wrapper {
+    position: relative;
+    img {
+        width: 100%;
+    }
+}
+.slide_wrapper_content {
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    color: antiquewhite;
+    h2 {
+        max-width: 50%;
+        font-size: 38px;
+    }
+}
+.content_black h2 {
+    color: #1d2939;
+}

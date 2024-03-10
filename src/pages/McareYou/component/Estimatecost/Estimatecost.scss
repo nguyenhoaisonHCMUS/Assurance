@@ -1,0 +1,145 @@
+.estimatecost {
+    padding: 32px;
+}
+
+.estim_form_border {
+    line-height: 38px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 6px;
+    display: flex;
+    justify-content: space-between;
+    span {
+        margin-right: 16px;
+    }
+}
+
+#estim_form_relationship,
+#estim_form_birthday,
+#estim_form_startday {
+    line-height: 38px;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+#estim_form_relationship {
+    flex-grow: 1;
+}
+
+#estim_form_birthday,
+#estim_form_startday {
+    width: 96%;
+}
+
+.estim_form_label {
+    margin-top: 24px;
+    font-weight: 500;
+    color: #000000d9;
+    width: 100%;
+    position: relative;
+}
+.estim_form_gen {
+    line-height: 40px;
+    label {
+        margin-right: 24px;
+        input {
+            margin-left: 12px;
+            font-size: 18px;
+        }
+    }
+}
+.estim_form_iicon {
+    display: inline-flex;
+    margin-left: 12px;
+    .icon_i {
+        margin: auto;
+    }
+}
+.estim_form_sumit {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.estim_form_tippyRender {
+    // position: absolute;
+    width: 250px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 8px 1px #ccc;
+    padding: 12px;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.estim_form_relationship {
+    font-size: 1.6rem;
+    padding: 0;
+}
+
+.estim_form_relationshipItem {
+    cursor: pointer;
+    line-height: 32px;
+    padding: 0 12px;
+    &:hover {
+        background-color: #cccccc4b;
+    }
+}
+
+.estim_form_bd {
+    width: 100%;
+    width: 300px;
+    background-color: #000;
+}
+
+////////////////////////////////////////////////////
+// .react-datepicker-wrapper {
+//     width: 100%;
+// }
+
+// .react-datepicker-ignore-onclickoutside {
+//     width: 100%;
+// }
+
+// .react-datepicker-popper {
+//     width: 80%;
+//     font-size: 14px !important;
+// }
+// .react-datepicker {
+//     width: 100%;
+// }
+// .react-datepicker__month-container {
+//     width: 100%;
+// }
+// .react-datepicker__current-month,
+// .react-datepicker-time__header,
+// .react-datepicker-year-header {
+//     font-size: 1.944rem;
+// }
+// .react-datepicker__time-container {
+//     display: none;
+// }
+
+// .react-datepicker__navigation--next--with-time:not(.react-datepicker__navigation--next--with-today-button) {
+//     right: 0 !important;
+// }
+// .react-datepicker__day-names {
+//     white-space: nowrap;
+//     margin-bottom: -8px;
+//     line-height: 32px;
+//     font-size: 16px;
+// }
+
+// .react-datepicker__day {
+//     color: #000;
+//     display: inline-block;
+//     width: 5.7rem;
+//     line-height: 2.7rem;
+//     text-align: center;
+//     margin: 0.166rem;
+//     font-size: 14px;
+// }
+
+// .react-datepicker__week {
+//     line-height: 24px;
+// }

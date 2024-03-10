@@ -1,0 +1,60 @@
+.header_wrapper {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    justify-content: space-between;
+}
+.header_logo {
+    height: 24px;
+    Link {
+        padding: 0;
+    }
+    img {
+        height: 24px;
+    }
+}
+
+.header_custom-tooltip {
+    box-shadow: 1px 1px 5px 1px #333;
+    border-radius: 5px;
+    width: 250px;
+    background-color: #fff;
+    top: 50px;
+}
+.header_custom-tooltip_li {
+    padding: 3px 5px 3px 10px;
+}
+
+.header_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .header_btn {
+        padding: 8px 19px;
+        color: var(--primary-color);
+        &:hover {
+            color: #ff8636;
+            border-color: #ff8636;
+        }
+    }
+}
+
+.header_navbar {
+    padding: 0 10px;
+    &:hover > li {
+        color: var(--primary-color);
+    }
+    li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .header_navbar_icon {
+            margin-left: 6px;
+        }
+        &:hover .header_navbar_icon {
+            transform: rotate(180deg);
+            transition: transform 0.2s ease-in-out;
+        }
+    }
+}

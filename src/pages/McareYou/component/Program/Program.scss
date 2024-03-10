@@ -1,0 +1,38 @@
+.program {
+    padding: 24px;
+    border-radius: 12px;
+    background-color: #fff;
+}
+.program_header {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    justify-content: space-between;
+}
+.Program_name {
+    display: flex;
+    align-items: center;
+    p {
+        font-size: 20px;
+    }
+}
+.program_btn {
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+.program_main {
+}
+.program_main_permiss {
+    line-height: 72px;
+}
+.program_main_permiss,
+.program_main_cost {
+    display: flex;
+    justify-content: space-between;
+    color: #1d2939;
+    span {
+        font-weight: 600;
+    }
+}

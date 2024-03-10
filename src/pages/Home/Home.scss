@@ -1,0 +1,57 @@
+.home {
+    // position: relative;
+    .home_banner_btn {
+        padding: 10px 50px;
+        background-color: #fff;
+        line-height: 24px;
+        min-width: 200px;
+    }
+}
+
+.home_buystep {
+}
+.home_buystep_steps {
+}
+.home_buystep_step {
+    line-height: 48px;
+    font-weight: 500;
+    .number,
+    .number_out {
+        span {
+            background-color: var(--primary-color);
+            padding: 2px 5px;
+            border-radius: 50%;
+        }
+        color: #fff;
+        margin-right: 18px;
+        position: relative;
+        display: inline;
+    }
+    .number::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 90%;
+        background-color: #ccc;
+        top: 24px;
+        left: 9px;
+    }
+}
+
+.home_questions_bg {
+    background-color: #cccccc4c;
+}
+.home_questions {
+    flex-direction: row-reverse;
+    padding-bottom: 60px !important;
+}
+.home_questions {
+    margin-left: 24px;
+    margin-top: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    li {
+        list-style-type: disc;
+        margin-left: 16px;
+    }
+}
