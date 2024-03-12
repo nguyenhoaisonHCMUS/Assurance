@@ -18,6 +18,7 @@ const imgs = {
     estim_form: require('./image-sheet-form.e2dd8513.png'),
     otobn2: require('./banner_vcx.335251d6.jpg'),
     otobn3: require('./BM-home-banner2.png'),
+    user: require('./user.png'),
 };
 
 export default imgs;

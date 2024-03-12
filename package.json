@@ -14,6 +14,7 @@
         "@tippyjs/react": "^4.2.6",
         "classnames": "^2.5.1",
         "customize-cra": "^1.0.0",
+        "json-server": "^1.0.0-alpha.23",
         "normalize.css": "^8.0.1",
         "prop-types": "^15.8.1",
         "react": "^18.2.0",

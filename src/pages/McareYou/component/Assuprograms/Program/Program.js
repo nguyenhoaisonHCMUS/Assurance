@@ -3,7 +3,6 @@ import ProTypes from 'prop-types';
 import { Chevronright } from '../../../../../assets/icons';
 
 function Program({ className, name, cost, permission, logo, onProgramBtnClick }) {
-    console.log(typeof onProgramBtnClick);
     return (
         <div className={`program ${className ? className : ''}`}>
             <div className="program_header">

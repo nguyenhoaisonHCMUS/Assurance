@@ -1,3 +1,12 @@
+@keyframes toLeft {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
 .mcareyou {
     position: relative;
 }
@@ -8,6 +17,8 @@
 .mcareyou_form_cost {
     box-shadow: 0px 0px 5px 1px #ccc;
     border-radius: 8px;
+    width: 480px;
+    margin-left: 48px;
 }
 
 .mcareyou_questions {
@@ -25,4 +36,9 @@
         list-style-type: square;
         margin-left: 16px;
     }
+}
+
+.mcareyou_drawer_cost {
+    background-color: #fff;
+    animation: toLeft 0.3s linear;
 }

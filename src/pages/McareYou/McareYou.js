@@ -19,10 +19,14 @@ function McareYou() {
         mcareyouFormRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
-    const onProgramBtnClick = () => {
+    const openDrawer = () => {
         setShowDrawer(true);
-        alert('hh');
     };
+
+    const closeDrawer = () => {
+        setShowDrawer(false);
+    };
+
     return (
         <div className="mcareyou">
             <Slide
@@ -38,8 +42,8 @@ function McareYou() {
 
             <Advantage />
             <Condition />
-            <Assuprograms onProgramBtnClicks={onProgramBtnClick} />
-            <Apart id="mcareyou_form_id" reff={mcareyouFormRef} className="mcareyou_form" src={imgs.estim_form}>
+            <Assuprograms onProgramBtnClicks={openDrawer} />
+            <Apart reff={mcareyouFormRef} className="mcareyou_form" src={imgs.estim_form}>
                 <Estimatecost
                     className="mcareyou_form_cost"
                     title="So sánh quyền lợi và phí"
@@ -127,13 +131,17 @@ function McareYou() {
                 />
             </Apart>
 
-            <Drawer drawer_right open={showDrawer}>
-                <Estimatecost
-                    className="mcareyou_drawer_estim"
-                    title="So sánh quyền lợi và phí"
-                    des="Bạn muốn tìm hiểu thêm về các Chương trình bảo hiểm, nhập thông tin Người được bảo hiểm để nhận quyền lợi và mức phí chính xác"
-                />
-            </Drawer>
+            {showDrawer && (
+                <Drawer drawer_right onClose={closeDrawer}>
+                    <div className="mcareyou_drawer_cost">
+                        <Estimatecost
+                            className="mcareyou_drawer_estim"
+                            title="So sánh quyền lợi và phí"
+                            des="Bạn muốn tìm hiểu thêm về các Chương trình bảo hiểm, nhập thông tin Người được bảo hiểm để nhận quyền lợi và mức phí chính xác"
+                        />
+                    </div>
+                </Drawer>
+            )}
         </div>
     );
 }

@@ -2,14 +2,19 @@ import imgs from '../../../assets/imgs';
 import config from '../../../config';
 import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react/headless';
-import React from 'react';
 import Button from '../../../component/Button';
 import { ChevronDown } from '../../../assets/icons/Icons';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faSign } from '@fortawesome/free-solid-svg-icons';
 import './Header.scss';
+import { useState } from 'react';
 
 function Header() {
+    const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
+    console.log(isLoggedIn);
+    const handleLogOut = () => {
+        localStorage.setItem('isLoggedIn', 'false');
+        setIsLoggedIn(false);
+    };
+
     return (
         <div className="header">
             <div className="header_wrapper">
@@ -46,9 +51,30 @@ function Header() {
                         </div>
                     </Tippy>
 
-                    <Button className="header_btn " border>
-                        Đăng nhập/Đăng ký
-                    </Button>
+                    {isLoggedIn === true ? (
+                        <div className="header_uerInfo">
+                            <Button className="header_btn" border>
+                                Quản lý hợp đồng
+                            </Button>
+                            <div className="header_user">
+                                <div className="header_user-img">
+                                    <img alt="user" src={imgs.user} />
+                                    <ChevronDown className="header_user_icon" />
+                                </div>
+                                <ul className="header_user_des">
+                                    {/* <li>{userInfo.username}</li> */}
+                                    <li>username</li>
+                                    <Button border onClick={handleLogOut} href={config.routes.home}>
+                                        Đăng xuất
+                                    </Button>
+                                </ul>
+                            </div>
+                        </div>
+                    ) : (
+                        <Button className="header_btn " border href={config.routes.login}>
+                            Đăng nhập/Đăng ký
+                        </Button>
+                    )}
                 </div>
             </div>
         </div>

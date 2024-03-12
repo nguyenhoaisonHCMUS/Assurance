@@ -6,6 +6,7 @@ import OtoBM from '../pages/OtoBM';
 import BhNhantho from '../pages/BhNhantho';
 import HeaderOnly from '../layouts/HeaderOnly';
 import CarInsured from '../pages/CarInsured/CarInsured';
+import Login from '../pages/Login';
 
 const publicRoute = [
     { path: config.routes.home, component: Home },
@@ -13,7 +14,7 @@ const publicRoute = [
     { path: config.routes.otobm, component: OtoBM },
     { path: config.routes.bhnhantho, component: BhNhantho },
     { path: config.routes.carinsured, component: CarInsured, layout: HeaderOnly },
-    // { path: config.routes.explore, component: Explore },
+    { path: config.routes.login, component: Login, layout: HeaderOnly },
     // { path: config.routes.live, component: Live },
 ];
 
