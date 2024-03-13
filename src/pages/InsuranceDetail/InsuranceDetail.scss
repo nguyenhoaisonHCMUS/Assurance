@@ -1,0 +1,101 @@
+.insurancedetail {
+}
+.insurancedetail_main {
+    border: 1px solid #cccccc4c;
+    width: 90%;
+    max-width: 1048px;
+    margin: 12px auto;
+    border-radius: 8px;
+}
+.insurancedetail_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #fff;
+}
+.insurancedetail_content {
+    display: flex;
+    align-items: center;
+    p {
+        margin-right: 36px;
+        font-weight: 500;
+    }
+}
+.insurancedetail_img {
+    img {
+        width: 3.2rem;
+    }
+}
+.insurancedetail_name {
+    font-size: 16px;
+}
+.insurancedetail_benefitmain {
+    // margin-top: 68px;
+}
+.insurancedetail_benemain_header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid #06aed4;
+    h3 {
+        font-size: 1.6rem;
+        margin-right: 12px;
+        color: #06aed4;
+    }
+}
+.insurancedetail_benemain_main {
+}
+.insurancedetail_benemain_ingredient {
+}
+.insurancedetail_benemain_name {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: #cccccc4c;
+    p {
+        font-weight: 600;
+    }
+    span {
+        font-size: 1.4rem;
+    }
+}
+.insurancedetail_benemain_checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+}
+.insurancedetail_benemain_fee {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    span {
+        color: var(--primary-color);
+    }
+    .insurancedetail_benemain_fee_icon {
+        transform: rotate(-90deg);
+        color: var(--primary-color);
+        width: 12px;
+        height: 12px;
+    }
+}
+.insurancedetail_benemain_bonus {
+    padding: 16px;
+}
+
+.insurancedetail_btn {
+    margin: 24px auto 80px;
+    width: 90%;
+    max-width: 1048px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+
+    .insurancedetail_btn_btn {
+        color: #06aed4;
+    }
+}

@@ -14,6 +14,7 @@ import Drawer from '../../component/Drawer/Drawer';
 function McareYou() {
     const mcareyouFormRef = useRef(null);
     const [showDrawer, setShowDrawer] = useState(false);
+    const [drawerData, setDrawerData] = useState(null);
 
     const handleBuyNowClick = () => {
         mcareyouFormRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -25,7 +26,13 @@ function McareYou() {
 
     const closeDrawer = () => {
         setShowDrawer(false);
+        setDrawerData(null);
     };
+    const handleDrawerData = (data) => {
+        openDrawer();
+        setDrawerData(data);
+    };
+    console.log(drawerData);
 
     return (
         <div className="mcareyou">
@@ -42,7 +49,7 @@ function McareYou() {
 
             <Advantage />
             <Condition />
-            <Assuprograms onProgramBtnClicks={openDrawer} />
+            <Assuprograms onProgramBtnClicks={handleDrawerData} />
             <Apart reff={mcareyouFormRef} className="mcareyou_form" src={imgs.estim_form}>
                 <Estimatecost
                     className="mcareyou_form_cost"
@@ -138,6 +145,7 @@ function McareYou() {
                             className="mcareyou_drawer_estim"
                             title="So sánh quyền lợi và phí"
                             des="Bạn muốn tìm hiểu thêm về các Chương trình bảo hiểm, nhập thông tin Người được bảo hiểm để nhận quyền lợi và mức phí chính xác"
+                            data={showDrawer ? drawerData : { id: 0 }}
                         />
                     </div>
                 </Drawer>

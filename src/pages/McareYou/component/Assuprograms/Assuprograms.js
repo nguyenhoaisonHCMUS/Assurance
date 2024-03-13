@@ -25,13 +25,7 @@ function Assuprograms({ className, onProgramBtnClicks }) {
                     {programs.map((program) => {
                         return (
                             <div className="assuprograms_main_container" key={program.id}>
-                                <Program
-                                    name={program.name}
-                                    cost={program.cost}
-                                    permission={program.permiss}
-                                    logo={program.logo}
-                                    onProgramBtnClick={onProgramBtnClicks}
-                                />
+                                <Program program={program} onProgramBtnClick={onProgramBtnClicks} />
                             </div>
                         );
                     })}

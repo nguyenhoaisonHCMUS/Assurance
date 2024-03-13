@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const relationshipOptions = ['Bản thân', 'Vợ/Chồng', 'Con ruột', 'Bố/ Mẹ đẻ', 'Bố/Mẹ chồng/vợ'];
 
-function Estimatecost({ className, title, des }) {
+function Estimatecost({ className, title, des, data }) {
     const [birthdate, setBirthdate] = useState('');
     const [relationship, setRelationship] = useState('');
     const [gender, setGender] = useState('male'); // Giới tính mặc định là nam
@@ -17,13 +17,8 @@ function Estimatecost({ className, title, des }) {
     const [formComplete, setFormComplete] = useState(false);
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-
         if (birthdate === '' || relationship === '') {
-            console.log('failed');
-        } else {
-            //xu ly khi dien day du thong tin
-            console.log('successfully');
+            e.preventDefault();
         }
     };
 
@@ -177,7 +172,12 @@ function Estimatecost({ className, title, des }) {
                     </div>
                 </div>
                 <div className="estim_form_sumit">
-                    <Button bg_color onClick={handleSubmit} disabled={!formComplete}>
+                    <Button
+                        href={data ? `insurancedetail/${data.id}` : ''}
+                        bg_color
+                        onClick={handleSubmit}
+                        disabled={!formComplete}
+                    >
                         Tính phí
                     </Button>
                 </div>
@@ -190,6 +190,7 @@ Estimatecost.propTypes = {
     className: PropTypes.string,
     title: PropTypes.string,
     des: PropTypes.string,
+    data: PropTypes.object,
 };
 
 export default Estimatecost;

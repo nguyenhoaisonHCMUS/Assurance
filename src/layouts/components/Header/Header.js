@@ -28,6 +28,7 @@ function Header() {
                         placement="bottom-start"
                         duration={'100,50'}
                         interactive
+                        appendTo={document.body}
                         render={(attrs) => (
                             <div className="header_custom-tooltip" tabIndex="-1" {...attrs}>
                                 <li className="header_custom-tooltip_li">
