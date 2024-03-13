@@ -5,6 +5,7 @@ const routes = {
     bhnhantho: '/bhnhantho',
     carinsured: '/otobm/car-insured-information',
     login: '/login',
+    insurancedetail: '/insurancedetail/:id',
 };
 
 export default routes;

@@ -1,43 +1,18 @@
 import ProTypes from 'prop-types';
 import './Assuprograms.scss';
-import imgs from '../../../../assets/imgs';
 import Program from './Program/Program';
-
-const programs = [
-    {
-        name: 'Đồng',
-        permiss: 92800000,
-        cost: 1196000,
-        logo: imgs.prog_dong,
-    },
-    {
-        name: 'Bạc',
-        permiss: 92800000,
-        cost: 1196000,
-        logo: imgs.prog_bac,
-    },
-    {
-        name: 'Vàng',
-        permiss: 92800000,
-        cost: 1196000,
-        logo: imgs.prog_vang,
-    },
-    {
-        name: 'Bạch Kim',
-        permiss: 92800000,
-        cost: 1196000,
-        logo: imgs.prog_bk,
-    },
-    {
-        name: 'Kim Cương',
-        permiss: 92800000,
-        cost: 1196000,
-        logo: imgs.prog_kc,
-    },
-];
+import { useEffect, useState } from 'react';
+import * as programApi from '../../../../apiServices/programService';
 
 function Assuprograms({ className, onProgramBtnClicks }) {
-    //console.log(typeof onProgramBtnClicks);
+    const [programs, setPrograms] = useState([]);
+    useEffect(() => {
+        const fetchApi = async () => {
+            const programResult = await programApi.program();
+            setPrograms(programResult);
+        };
+        fetchApi();
+    }, []);
 
     return (
         <div className="bg_assuprograms">
@@ -47,9 +22,9 @@ function Assuprograms({ className, onProgramBtnClicks }) {
                     <p>Bảo hiểm Sức khoẻ M-CareYou cung cấp 5 chương trình bảo hiểm linh hoạt theo nhu cầu của bạn</p>
                 </div>
                 <div className="assuprograms_main">
-                    {programs.map((program, index) => {
+                    {programs.map((program) => {
                         return (
-                            <div className="assuprograms_main_container" key={index}>
+                            <div className="assuprograms_main_container" key={program.id}>
                                 <Program
                                     name={program.name}
                                     cost={program.cost}

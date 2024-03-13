@@ -7,6 +7,7 @@ import BhNhantho from '../pages/BhNhantho';
 import HeaderOnly from '../layouts/HeaderOnly';
 import CarInsured from '../pages/CarInsured/CarInsured';
 import Login from '../pages/Login';
+import InsuranceDetail from '../pages/InsuranceDetail/InsuranceDetail';
 
 const publicRoute = [
     { path: config.routes.home, component: Home },
@@ -15,7 +16,7 @@ const publicRoute = [
     { path: config.routes.bhnhantho, component: BhNhantho },
     { path: config.routes.carinsured, component: CarInsured, layout: HeaderOnly },
     { path: config.routes.login, component: Login, layout: HeaderOnly },
-    // { path: config.routes.live, component: Live },
+    { path: config.routes.insurancedetail, component: InsuranceDetail, layout: HeaderOnly },
 ];
 
 const privateRoute = {};
