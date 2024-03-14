@@ -199,11 +199,22 @@ function InsuranceDetail() {
                         {/* //////////////////////////////////////////////////////////// */}
                         <div className="insurancedetail_benemain_ingredient">
                             <div className="insurancedetail_benemain_name">
-                                <input className="insurancedetail_benemain_checkbox" type="checkbox" value />
-                                <div
-                                    className="insurancedetail_benemain_checkboxbefore"
-                                    onClick={handleShowPersonalAcident}
-                                ></div>
+                                <input
+                                    className="insurancedetail_benemain_checkbox"
+                                    type="checkbox"
+                                    checked={costPersonalAcident !== 0}
+                                    onChange={() => {
+                                        setCostPersonalAcident(0);
+                                    }}
+                                />
+                                {costPersonalAcident === 0 ? (
+                                    <div
+                                        className="insurancedetail_benemain_checkboxbefore"
+                                        onClick={handleShowPersonalAcident}
+                                    ></div>
+                                ) : (
+                                    ''
+                                )}
                                 <p>Bảo hiểm Tai nạn cá nhân </p>
                                 <span></span>
                             </div>
@@ -229,19 +240,44 @@ function InsuranceDetail() {
                         </div>
                         <div className="insurancedetail_benemain_ingredient">
                             <div className="insurancedetail_benemain_name">
-                                <input className="insurancedetail_benemain_checkbox" type="checkbox" />
-                                <div className="insurancedetail_benemain_checkboxbefore" onClick={handleShowLife}></div>
+                                <input
+                                    className="insurancedetail_benemain_checkbox"
+                                    type="checkbox"
+                                    checked={costLife !== 0}
+                                    onChange={() => {
+                                        setCostLife(0);
+                                    }}
+                                />
+                                {costLife === 0 ? (
+                                    <div
+                                        className="insurancedetail_benemain_checkboxbefore"
+                                        onClick={handleShowLife}
+                                    ></div>
+                                ) : (
+                                    ''
+                                )}
                                 <p>Bảo hiểm Sinh mạng cá nhân </p>
                                 <span></span>
                             </div>
                             <div className="insurancedetail_benemain_fee">
-                                <p>Tối đa 290 triệu đồng</p>
-                                <span>
+                                {costLife === 0 ? (
+                                    <p>Tối đa 290 triệu đồng</p>
+                                ) : (
+                                    <p>{formatNumberWithDots(costLife)}</p>
+                                )}
+                                <span onClick={handleShowLife}>
                                     {' '}
-                                    Chọn số tiền bảo hiểm <ChevronDown className="insurancedetail_benemain_fee_icon" />
+                                    {costLife === 0 ? <p>Chọn số tiền bảo hiểm</p> : <p>Thay đổi</p>}
+                                    <ChevronDown className="insurancedetail_benemain_fee_icon" />
                                 </span>
                             </div>
-                            <div className="insurancedetail_benemain_bonus">Phí: 0,09% số tiền bảo hiểm</div>
+                            <div className="insurancedetail_benemain_bonus">
+                                {costLife === 0 ? (
+                                    <p>Phí: 0,2% số tiền bảo hiểm</p>
+                                ) : (
+                                    <p>Phí: {formatNumberWithDots(costLife * 0.002)}</p>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>
