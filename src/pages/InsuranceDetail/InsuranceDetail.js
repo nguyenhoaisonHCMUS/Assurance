@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import Button from '../../component/Button';
 import { ChevronDown, Iicon } from '../../assets/icons';
 import { formatNumberWithDots } from '../../utils/funcs';
+import Drawer from '../../component/Drawer/Drawer';
+import PersonalAcident from './component/PersonalAcident/PersonalAcident';
 
 function InsuranceDetail() {
     const { id } = useParams();
@@ -13,6 +15,10 @@ function InsuranceDetail() {
     const [additionalFee, setAdditionalFee] = useState(0);
     const [isOutpatient, setisOutpatient] = useState(false);
     const [isDental, setIsDental] = useState(false);
+    const [showPersonalAcident, setshowPersonalAcident] = useState(false);
+    const [costPersonalAcident, setCostPersonalAcident] = useState(0);
+    const [showLife, setshowLife] = useState(false);
+    const [costLife, setCostLife] = useState(0);
 
     useEffect(() => {
         const fetchApi = async () => {
@@ -22,26 +28,49 @@ function InsuranceDetail() {
         fetchApi();
     }, []);
 
-    const handlePatient = (event) => {
-        const checked = event.target.checked;
-        setisOutpatient(checked);
-        if (checked) {
+    const handlePatient = () => {
+        setisOutpatient(!isOutpatient);
+        if (!isOutpatient) {
             setAdditionalFee((prev) => prev + 1716000);
         } else {
             setAdditionalFee((prev) => prev - 1716000);
         }
     };
-    const handleDental = (event) => {
-        const checked = event.target.checked;
-        setIsDental(checked);
-        if (checked) {
+    const handleDental = () => {
+        setIsDental(!isDental);
+        if (!isDental) {
             setAdditionalFee((prev) => prev + 1200000);
         } else {
             setAdditionalFee((prev) => prev - 1200000);
         }
     };
 
-    const program = programs.find((program) => program.id.toString() === id);
+    const handleShowPersonalAcident = () => {
+        setshowPersonalAcident(true);
+    };
+
+    const handleCostPersonalAcident = (cost_PersonalAcident) => {
+        setshowPersonalAcident(false);
+        setCostPersonalAcident(cost_PersonalAcident);
+    };
+    const handleOffPersonalAcident = () => {
+        setshowPersonalAcident(false);
+    };
+    // console.log(costPersonalAcident);
+
+    const handleShowLife = () => {
+        setshowLife(true);
+    };
+
+    const handleCostLife = (cost_Life) => {
+        setshowLife(false);
+        setCostLife(cost_Life);
+    };
+    const handleOffLife = () => {
+        setshowLife(false);
+    };
+
+    const program = programs[parseInt(id)];
     if (!program) {
         return <h2 style={{ color: 'red' }}>Không có chương trình bảo hiểm này</h2>;
     }
@@ -74,7 +103,7 @@ function InsuranceDetail() {
                                 <p>Tổng hạn mức chi trả</p>
                                 <span>(số tiền/người/năm)</span>
                             </div>
-                            <div className="insurancedetail_benemain_fee">{program.permiss}đ</div>
+                            <div className="insurancedetail_benemain_fee">{formatNumberWithDots(program.permiss)}đ</div>
                         </div>
                         <div className="insurancedetail_benemain_ingredient">
                             <div className="insurancedetail_benemain_name">
@@ -142,8 +171,10 @@ function InsuranceDetail() {
                                 <input
                                     className="insurancedetail_benemain_checkbox"
                                     type="checkbox"
+                                    checked={isOutpatient}
                                     onChange={handlePatient}
                                 />
+
                                 <p>Điều trị ngoại trú do ốm bệnh, tai nạn</p>
                                 <span>(số tiền/năm)</span>
                             </div>
@@ -155,7 +186,7 @@ function InsuranceDetail() {
                                 <input
                                     className="insurancedetail_benemain_checkbox"
                                     type="checkbox"
-                                    value
+                                    checked={isDental}
                                     onChange={handleDental}
                                 />
                                 <p>Bảo hiểm Nha khoa</p>
@@ -164,24 +195,42 @@ function InsuranceDetail() {
                             <div className="insurancedetail_benemain_fee">5.000.000đ/năm, 2.500.000đ/lần khám</div>
                             <div className="insurancedetail_benemain_bonus">Phí: 1.200.000đ</div>
                         </div>
+
+                        {/* //////////////////////////////////////////////////////////// */}
                         <div className="insurancedetail_benemain_ingredient">
                             <div className="insurancedetail_benemain_name">
                                 <input className="insurancedetail_benemain_checkbox" type="checkbox" value />
+                                <div
+                                    className="insurancedetail_benemain_checkboxbefore"
+                                    onClick={handleShowPersonalAcident}
+                                ></div>
                                 <p>Bảo hiểm Tai nạn cá nhân </p>
                                 <span></span>
                             </div>
                             <div className="insurancedetail_benemain_fee">
-                                <p>Tối đa 1 tỷ đồng</p>
-                                <span>
+                                {costPersonalAcident === 0 ? (
+                                    <p>Tối đa 1 tỷ đồng</p>
+                                ) : (
+                                    <p>{formatNumberWithDots(costPersonalAcident)}đ</p>
+                                )}
+                                <span onClick={handleShowPersonalAcident}>
                                     {' '}
-                                    Chọn số tiền bảo hiểm <ChevronDown className="insurancedetail_benemain_fee_icon" />
+                                    {costPersonalAcident === 0 ? <p>Chọn số tiền bảo hiểm</p> : <p>Thay đổi</p>}{' '}
+                                    <ChevronDown className="insurancedetail_benemain_fee_icon" />
                                 </span>
                             </div>
-                            <div className="insurancedetail_benemain_bonus">Phí: 0,09% số tiền bảo hiểm</div>
+                            <div className="insurancedetail_benemain_bonus">
+                                {costPersonalAcident === 0 ? (
+                                    <p>Phí: 0,09% số tiền bảo hiểm</p>
+                                ) : (
+                                    <p>Phí: {formatNumberWithDots(costPersonalAcident * 0.0009)}đ</p>
+                                )}
+                            </div>
                         </div>
                         <div className="insurancedetail_benemain_ingredient">
                             <div className="insurancedetail_benemain_name">
-                                <input className="insurancedetail_benemain_checkbox" type="checkbox" value />
+                                <input className="insurancedetail_benemain_checkbox" type="checkbox" />
+                                <div className="insurancedetail_benemain_checkboxbefore" onClick={handleShowLife}></div>
                                 <p>Bảo hiểm Sinh mạng cá nhân </p>
                                 <span></span>
                             </div>
@@ -206,6 +255,36 @@ function InsuranceDetail() {
                     Xem chi tiết quyền lợi
                 </Button>
             </div>
+
+            {showPersonalAcident && (
+                <Drawer drawer_right onClose={handleOffPersonalAcident}>
+                    <PersonalAcident
+                        name="Bảo hiểm Tai nạn cá nhân"
+                        initCost={costPersonalAcident}
+                        min={50000000}
+                        max={1000000000}
+                        range={50000000}
+                        fee_percent={0.0009}
+                        onClose={handleOffPersonalAcident}
+                        onUpdate={handleCostPersonalAcident}
+                    />
+                </Drawer>
+            )}
+
+            {showLife && (
+                <Drawer drawer_right onClose={handleOffLife}>
+                    <PersonalAcident
+                        name="Bảo hiểm Sinh mạng cá nhân"
+                        initCost={costLife}
+                        min={50000000}
+                        max={290000000}
+                        range={10000000}
+                        fee_percent={0.002}
+                        onClose={handleOffLife}
+                        onUpdate={handleCostLife}
+                    />
+                </Drawer>
+            )}
         </div>
     );
 }

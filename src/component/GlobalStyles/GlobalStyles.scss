@@ -54,3 +54,12 @@ input {
     border: none;
     outline: none;
 }
+
+@keyframes toLeft {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
