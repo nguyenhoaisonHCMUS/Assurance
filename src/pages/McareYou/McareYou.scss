@@ -1,3 +1,5 @@
+@import '../../component/GlobalStyles/Reponsive.scss';
+
 .mcareyou {
     position: relative;
 }
@@ -10,6 +12,9 @@
     border-radius: 8px;
     width: 480px;
     margin-left: 48px;
+    @include mobile_tablet {
+        margin: 0 auto;
+    }
 }
 
 .mcareyou_questions {
@@ -27,9 +32,16 @@
         list-style-type: square;
         margin-left: 16px;
     }
+    @include mobile_tablet {
+        margin-left: 0;
+    }
 }
 
 .mcareyou_drawer_cost {
     background-color: #fff;
+    height: 100%;
     animation: toLeft 0.3s linear;
+    @include mobile {
+        animation-name: toTop;
+    }
 }

@@ -19,6 +19,9 @@ const imgs = {
     otobn2: require('./banner_vcx.335251d6.jpg'),
     otobn3: require('./BM-home-banner2.png'),
     user: require('./user.png'),
+    oto_t1: require('./car-t1.png'),
+    oto_t2: require('./car-t2.png'),
+    oto_t3: require('./car-t3.png'),
 };
 
 export default imgs;

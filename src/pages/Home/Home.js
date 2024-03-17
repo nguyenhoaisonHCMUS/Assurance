@@ -8,6 +8,8 @@ import ListSlide from '../../component/ListSlide';
 import config from '../../config';
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import ProductItem from '../../component/ProductList/ProductItem/ProductItem';
+import ChildrenProductHome from './component/ChildrenProductHome/ChildrenProductHome';
 
 const products = [
     {
@@ -76,7 +78,28 @@ function Home() {
             <ListSlide slides={slides} />
             <Advantage />
 
-            <ProductList products={products} />
+            <ProductList
+                children={
+                    <Fragment>
+                        {products.map((product, index) => {
+                            return (
+                                <ProductItem
+                                    key={index}
+                                    src={product.src}
+                                    children={
+                                        <ChildrenProductHome
+                                            href={product.href}
+                                            content={product.content}
+                                            advans={product.advans}
+                                            heading={product.heading}
+                                        />
+                                    }
+                                />
+                            );
+                        })}
+                    </Fragment>
+                }
+            />
             <Apart className="home_buystep" src={imgs.step_img} heading="Mua bảo hiểm trực tuyến dễ dàng với 4 bước">
                 <div className="home_buystep_steps">
                     <div className="home_buystep_step">

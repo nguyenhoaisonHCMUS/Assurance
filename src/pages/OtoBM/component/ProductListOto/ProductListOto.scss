@@ -1,0 +1,61 @@
+@import '../../../../component/GlobalStyles/Reponsive.scss';
+
+.productlistoto {
+    background-color: #cccccc4c;
+    padding-bottom: 60px;
+}
+.productlistoto_header {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    color: #1d2939;
+    margin-bottom: 16px;
+    @include mobile_tablet {
+        padding-top: 24px;
+    }
+}
+.productlistoto_content {
+    display: flex;
+    width: 95%;
+    max-width: 1048px;
+    margin: 0 auto;
+    @include mobile {
+        display: block;
+        width: 100%;
+    }
+}
+.productlistoto_btn {
+    width: 95%;
+    max-width: 1048px;
+    margin: 24px auto 12px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 14px;
+}
+
+/////////////////////////////
+.productlistoto_drawer {
+    display: flex;
+    flex-direction: column;
+}
+.productlistoto_drawerheading {
+}
+.productlistoto_list1 {
+    max-height: 400px;
+    // flex-grow: 1;
+    overflow: scroll;
+    p {
+        font-weight: 600;
+        margin-top: 20px;
+    }
+    li {
+        list-style-type: disc;
+        margin-left: 20px;
+
+        margin-bottom: 6px;
+    }
+}
+.productlistoto_drawer_btn {
+    display: flex;
+    justify-content: flex-end;
+}

@@ -1,3 +1,5 @@
+@import '../GlobalStyles/Reponsive.scss';
+
 .slide_wrapper {
     position: relative;
     img {
@@ -14,6 +16,10 @@
     h2 {
         max-width: 50%;
         font-size: 38px;
+        @include mobile {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
     }
 }
 .content_black h2 {

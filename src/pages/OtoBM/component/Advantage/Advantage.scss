@@ -1,3 +1,5 @@
+@import '../../../../component/GlobalStyles/Reponsive.scss';
+
 .bg_advans {
     position: relative;
     height: 400px;
@@ -18,6 +20,9 @@
     width: 95%;
     max-width: 1048px;
     padding: 40px;
+    @include mobile_tablet {
+        padding: 40px 24px;
+    }
 }
 .advans_header {
     margin-right: 20px;
@@ -34,6 +39,9 @@
         height: 1px;
         background-color: #cccccc4c;
         bottom: 206px;
+        @include mobile_tablet {
+            width: 0;
+        }
     }
     > :nth-child(2)::after {
         content: '';
@@ -42,17 +50,27 @@
         height: 1px;
         background-color: #cccccc4c;
         bottom: 77px;
+        @include mobile_tablet {
+            width: 0;
+        }
     }
 }
 .advans_more_s {
     flex: 1;
     display: flex;
+    @include mobile {
+        display: block;
+    }
 }
 .advans_more_item {
     display: flex;
     width: 50%;
     margin-bottom: 20px;
     margin-top: 12px;
+    @include mobile {
+        width: 100%;
+        align-items: center;
+    }
 }
 .advans_more_paicon {
     padding: 10px;

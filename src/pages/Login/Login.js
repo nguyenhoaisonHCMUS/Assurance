@@ -78,7 +78,13 @@ function Login() {
                         )}
                     </div>
                     <div className="login_btn">
-                        <Button bg_color disabled={!checkIn} onClick={handleLogin} href={config.routes.home}>
+                        <Button
+                            className="login_btn_btn"
+                            bg_color
+                            disabled={!checkIn}
+                            onClick={handleLogin}
+                            href={config.routes.home}
+                        >
                             Đăng nhập
                         </Button>
                     </div>

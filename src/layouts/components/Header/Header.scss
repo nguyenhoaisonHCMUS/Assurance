@@ -1,3 +1,5 @@
+@import '../../../component/GlobalStyles/Reponsive.scss';
+
 @keyframes hidden {
     from {
         opacity: 0;
@@ -13,6 +15,9 @@
     align-items: center;
     padding: 0 32px;
     justify-content: space-between;
+    @include mobile {
+        padding: 0 12px;
+    }
 }
 .header_logo {
     height: 24px;
@@ -42,10 +47,16 @@
     .header_btn {
         padding: 8px 19px;
         color: var(--primary-color);
+        span {
+            font-size: 16px;
+        }
         &:hover {
             color: #ff8636;
             border-color: #ff8636;
         }
+    }
+    @include mobile {
+        display: none;
     }
 }
 
@@ -92,6 +103,10 @@
     align-items: center;
     margin-left: 60px;
     position: relative;
+    @include mobile {
+        margin-left: 0;
+        margin-top: 24px;
+    }
     img {
         width: 36px;
         height: 36px;
@@ -109,6 +124,9 @@
         top: 50%;
         transform: translateY(-50%);
         left: -30px;
+        @include mobile {
+            width: 0;
+        }
     }
 }
 .header_user_des {
@@ -131,4 +149,70 @@
             background-color: #cccccc4c;
         }
     }
+}
+
+.header_menu_mobile {
+    display: none;
+    width: 30px;
+    height: 30px;
+    @include mobile {
+        display: block;
+    }
+    .header_menu_mobile_icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+//////////////////////////////////////////////////////////
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    @include mobile {
+        display: block;
+    }
+    animation: toRight 0.3s linear;
+}
+.modal_overlay {
+}
+.modal_body {
+    width: 100%;
+}
+.modal_inner {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 12px;
+}
+.modal_heading {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+.modal_inner_body {
+}
+.modal_inner_list {
+}
+.modal_inner_item {
+    padding: 8px 0;
+    p {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.modal_btn {
+    padding: 0;
+}
+.modal_help_list {
+    display: none;
+}
+.modal_inner_item:hover > .modal_help_list {
+    display: block;
 }

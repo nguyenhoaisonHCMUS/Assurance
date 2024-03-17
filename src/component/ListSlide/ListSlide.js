@@ -43,7 +43,7 @@ function ListSlide({ className, slides }) {
                             src={slide.src}
                             content={slide.content}
                             btn={
-                                <Button href={slide.href} bg_color>
+                                <Button href={slide.href} border>
                                     {slide.content_btn}
                                 </Button>
                             }

@@ -1,3 +1,5 @@
+@import '../GlobalStyles/Reponsive.scss';
+
 .question {
     margin-left: 24px;
     border-radius: 8px;
@@ -5,6 +7,9 @@
     color: #1d2930;
     + .question {
         margin-top: 12px;
+    }
+    @include mobile_tablet {
+        margin-left: 0;
     }
 }
 .question_ques {
@@ -29,10 +34,9 @@
 .bg_ccc {
     background-color: #cccccc4c;
 }
-
 .active {
     height: auto;
-    max-height: 1000px;
+    max-height: 1000px !important;
     transition: max-height 2s linear;
     padding: 16px 16px 1px;
 }

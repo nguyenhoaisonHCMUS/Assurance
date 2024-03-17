@@ -1,11 +1,23 @@
+@import '../GlobalStyles/Reponsive.scss';
 .apart {
     display: flex;
+    justify-content: center;
     max-width: 1048px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 40px;
+    @include mobile_tablet {
+        padding: 0;
+    }
 }
 .apart_main {
+    @include mobile_tablet {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        // align-items: center;
+        flex-direction: column;
+    }
 }
 .apart_heading {
     h1 {
@@ -23,5 +35,8 @@
         width: 369px;
         margin: 44px 0 80px;
         padding: 4px 0 16px;
+    }
+    @include mobile_tablet {
+        display: none;
     }
 }

@@ -25,6 +25,7 @@ function Button({
         });
     }
     if (to) {
+        props.to = to;
         Comp = Link;
     } else if (href) {
         props.href = href;

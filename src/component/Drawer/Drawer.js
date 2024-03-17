@@ -1,6 +1,7 @@
 import './Drawer.scss';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { memo } from 'react';
 
 function Drawer({ className, children, drawer_right, drawer_left, onClose }) {
     const generateClassString = () => {
@@ -27,4 +28,4 @@ Drawer.propTypes = {
     drawer_open: PropTypes.bool,
     onClose: PropTypes.func,
 };
-export default Drawer;
+export default memo(Drawer);

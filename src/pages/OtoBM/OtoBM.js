@@ -7,6 +7,7 @@ import Question from '../../component/Question/Question';
 import { Fragment } from 'react';
 import config from '../../config';
 import Advantage from './component/Advantage/Advantage';
+import ProductListOto from './component/ProductListOto/ProductListOto';
 
 const slides = [
     {
@@ -29,12 +30,34 @@ const slides = [
     },
 ];
 
-function OtoBM({ className }) {
+const products = [
+    {
+        src: imgs.oto_t1,
+        heading: 'Bảo hiểm Trách nhiệm dân sự bắt buộc',
+        permiss: '150.000.000đ/người/vụ',
+        fee: 'Từ 437.000đ/năm',
+    },
+    {
+        src: imgs.oto_t2,
+        heading: 'Bảo hiểm Vật chất ô tô',
+        permiss: 'Bồi thường theo giá trị xe',
+        fee: 'Phụ thuộc vào loại xe',
+    },
+    {
+        src: imgs.oto_t3,
+        heading: 'Bảo hiểm tai nạn lái, phụ xe và người ngồi trên xe',
+        permiss: 'Đến 500.000.000đ/người/vụ',
+        fee: 'Từ 10.000đ/người/năm',
+    },
+];
+
+function OtoBM() {
     return (
         <div className="mcareyou">
             <ListSlide slides={slides} />
 
             <Advantage />
+            <ProductListOto products={products} />
 
             <Apart className="home_buystep" src={imgs.step_img} heading="Mua bảo hiểm trực tuyến dễ dàng với 4 bước">
                 <div className="home_buystep_steps">

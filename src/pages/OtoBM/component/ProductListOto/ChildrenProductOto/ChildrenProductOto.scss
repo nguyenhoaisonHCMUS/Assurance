@@ -1,0 +1,54 @@
+.childrenproductoto {
+}
+.childrenproductoto_heading {
+    // height: 48px;
+    > p {
+        font-weight: 600;
+        margin-bottom: 12px;
+        height: 70px;
+    }
+}
+.childrenproductoto_des {
+    height: 170px;
+    overflow: scroll;
+}
+.childrenproductoto_main {
+}
+.childrenproductoto_permiss,
+.childrenproductoto_fee {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 12px 0;
+    span {
+        font-weight: 500;
+    }
+}
+.childrenproductoto_btn {
+    display: flex;
+    justify-content: space-between;
+}
+.childrenproductoto_btn_buy {
+    display: flex;
+    align-items: center;
+    input {
+        width: 20px;
+        height: 20px;
+        margin-right: 6px;
+    }
+}
+
+.childrenproductoto_btn_detail {
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    cursor: pointer;
+    p {
+        margin-right: 8px;
+    }
+}
+
+.disabled_productoto {
+    pointer-events: none;
+    opacity: 0.5;
+}

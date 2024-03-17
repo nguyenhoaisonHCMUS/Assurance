@@ -1,3 +1,5 @@
+@import '../../component/GlobalStyles/Reponsive.scss';
+
 .login_bg {
     background-color: #cccccc4c;
     position: relative;
@@ -14,10 +16,14 @@
     margin-top: 32px;
     left: 50%;
     transform: translateX(-50%);
+    @include mobile {
+        padding: 12px 24px;
+    }
     h2 {
         font-size: 24px;
         line-height: 32px;
         margin-bottom: 16px !important;
+        text-align: center;
     }
     > p {
         font-weight: 400;
@@ -31,11 +37,18 @@
 .login_option {
     display: flex;
     justify-content: space-between;
+    @include mobile {
+        display: block;
+    }
     label {
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        @include mobile {
+            justify-content: flex-start;
+            padding: 12px 0;
+        }
     }
     input[type='radio'] {
         width: 20px;
@@ -61,4 +74,10 @@
     margin-top: 24px;
     display: flex;
     justify-content: flex-end;
+
+    .login_btn_btn {
+        @include mobile {
+            width: 100%;
+        }
+    }
 }

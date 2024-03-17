@@ -1,3 +1,5 @@
+@import '../GlobalStyles/Reponsive.scss';
+
 .productList {
     background-color: #cccccc4c;
     padding-bottom: 60px;
@@ -8,10 +10,20 @@
     font-weight: 600;
     color: #1d2939;
     margin-bottom: 16px;
+    @include mobile_tablet {
+        padding-top: 24px;
+    }
 }
 .productList_content {
     display: flex;
     width: 95%;
     max-width: 1048px;
     margin: 0 auto;
+    @include mobile {
+        display: block;
+        width: 100%;
+    }
+    > div {
+        display: flex;
+    }
 }

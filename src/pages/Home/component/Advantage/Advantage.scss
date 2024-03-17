@@ -1,8 +1,12 @@
+@import '../../../../component/GlobalStyles/Reponsive.scss';
 .bg_advan {
     position: relative;
     height: 240px;
     background-color: #cccccc4c;
     margin-top: -5px;
+    @include mobile_tablet {
+        height: auto;
+    }
 }
 
 .advantage {
@@ -18,15 +22,33 @@
     width: 95%;
     max-width: 1048px;
     padding: 40px;
+    @include mobile_tablet {
+        position: static;
+        transform: translate(0);
+        width: 100%;
+        border-radius: 0;
+        display: block;
+        padding: 40px 24px;
+    }
 }
 .advan_header {
     margin-right: 20px;
+    @include mobile_tablet {
+        margin-left: 0;
+        margin-bottom: 12px;
+    }
+    @include mobile_tablet {
+        text-align: center;
+    }
 }
 .advan_more {
     display: flex;
 }
 .advan_more_s {
     flex: 1;
+    @include mobile_tablet {
+        margin-bottom: 24px;
+    }
 }
 .advan_more_paicon {
     padding: 10px;
@@ -40,6 +62,9 @@
     font-size: 16px;
     line-height: 24px;
     margin: 16px 0 4px;
+    @include mobile_tablet {
+        display: inline;
+    }
 }
 .advan_more_content {
     line-height: 24px;

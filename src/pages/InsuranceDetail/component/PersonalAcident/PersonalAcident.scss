@@ -1,9 +1,14 @@
+@import '../../../../component/GlobalStyles/Reponsive.scss';
+
 .personalacident {
     background-color: #fff;
     height: 100%;
     display: flex;
     flex-direction: column;
     animation: toLeft 0.3s linear;
+    @include mobile {
+        animation-name: toTop;
+    }
 }
 .personalacident_header {
     display: flex;
