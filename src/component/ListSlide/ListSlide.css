@@ -1,0 +1,12 @@
+.listslide {
+  overflow: hidden;
+}
+
+.listSlide_slides {
+  display: flex;
+  justify-content: center;
+}
+
+.listSlide_slide {
+  width: 100%;
+}/*# sourceMappingURL=ListSlide.css.map */

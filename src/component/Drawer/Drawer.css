@@ -1,0 +1,47 @@
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.drawer_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5058823529);
+}
+
+.drawer_body {
+  width: 100%;
+}
+
+.drawer_inner {
+  position: absolute;
+  height: 100vh;
+  bottom: 0;
+  width: 35%;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 24px 20px;
+  animation: toLeft 0.3s linear;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .drawer_inner {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .drawer_inner {
+    width: 100%;
+    height: 90%;
+    border-radius: 12px;
+    animation-name: toTop;
+  }
+}
+
+.drawer_right .drawer_inner {
+  right: 0;
+}/*# sourceMappingURL=Drawer.css.map */

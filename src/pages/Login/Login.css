@@ -1,0 +1,87 @@
+.login_bg {
+  background-color: rgba(204, 204, 204, 0.2980392157);
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.login_page {
+  position: absolute;
+  background-color: #fff;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 16px;
+  padding: 32px 48px;
+  margin-top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media only screen and (max-width: 767px) {
+  .login_page {
+    padding: 12px 24px;
+  }
+}
+.login_page h2 {
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 16px !important;
+  text-align: center;
+}
+.login_page > p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 16px;
+}
+
+.login_option {
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 767px) {
+  .login_option {
+    display: block;
+  }
+}
+.login_option label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+@media only screen and (max-width: 767px) {
+  .login_option label {
+    justify-content: flex-start;
+    padding: 12px 0;
+  }
+}
+.login_option input[type=radio] {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+}
+
+.login_input {
+  margin-top: 32px;
+}
+.login_input p {
+  margin-bottom: 8px;
+}
+.login_input input {
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 20px;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.login_btn {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+@media only screen and (max-width: 767px) {
+  .login_btn .login_btn_btn {
+    width: 100%;
+  }
+}/*# sourceMappingURL=Login.css.map */

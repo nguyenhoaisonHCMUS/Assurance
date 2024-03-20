@@ -1,0 +1,29 @@
+.slide_wrapper {
+  position: relative;
+}
+.slide_wrapper img {
+  width: 100%;
+}
+
+.slide_wrapper_content {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  color: antiquewhite;
+}
+.slide_wrapper_content h2 {
+  max-width: 50%;
+  font-size: 38px;
+}
+@media only screen and (max-width: 767px) {
+  .slide_wrapper_content h2 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+}
+
+.content_black h2 {
+  color: #1d2939;
+}/*# sourceMappingURL=Slide.css.map */

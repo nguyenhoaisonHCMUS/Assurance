@@ -37,7 +37,7 @@ const ChildrenProductOto = ({ name, permiss, fee, des, disabled = false, onBuy, 
                             checked={program}
                             onChange={() => setProgram(!program)}
                         />
-                        <label htmlFor="childrenproductoto_btn_buyid">Chọn mua</label>
+                        <label>Chọn mua</label>
                     </div>
                     <div className="childrenproductoto_btn_detail" onClick={onShowDetail}>
                         <p>Chi tiết</p>

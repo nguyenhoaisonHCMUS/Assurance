@@ -1,0 +1,87 @@
+.bg_advan {
+  position: relative;
+  height: 240px;
+  background-color: rgba(204, 204, 204, 0.2980392157);
+  margin-top: -5px;
+}
+@media (max-width: 1024px) {
+  .bg_advan {
+    height: auto;
+  }
+}
+
+.advantage {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 18px;
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 95%;
+  max-width: 1048px;
+  padding: 40px;
+}
+@media (max-width: 1024px) {
+  .advantage {
+    position: static;
+    transform: translate(0);
+    width: 100%;
+    border-radius: 0;
+    display: block;
+    padding: 40px 24px;
+  }
+}
+
+.advan_header {
+  margin-right: 20px;
+}
+@media (max-width: 1024px) {
+  .advan_header {
+    margin-left: 0;
+    margin-bottom: 12px;
+  }
+}
+@media (max-width: 1024px) {
+  .advan_header {
+    text-align: center;
+  }
+}
+
+.advan_more {
+  display: flex;
+}
+
+.advan_more_s {
+  flex: 1;
+}
+@media (max-width: 1024px) {
+  .advan_more_s {
+    margin-bottom: 24px;
+  }
+}
+
+.advan_more_paicon {
+  padding: 10px;
+  border-radius: 13px;
+  background-color: #fef7f3;
+}
+
+.advan_more_heading {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 16px 0 4px;
+}
+@media (max-width: 1024px) {
+  .advan_more_heading {
+    display: inline;
+  }
+}
+
+.advan_more_content {
+  line-height: 24px;
+  font-size: 16px;
+}/*# sourceMappingURL=Advantage.css.map */

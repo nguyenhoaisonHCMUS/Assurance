@@ -1,0 +1,52 @@
+.childrenproductoto_heading > p {
+  font-weight: 600;
+  margin-bottom: 12px;
+  height: 70px;
+}
+
+.childrenproductoto_des {
+  height: 170px;
+  overflow: scroll;
+}
+
+.childrenproductoto_permiss,
+.childrenproductoto_fee {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 12px 0;
+}
+.childrenproductoto_permiss span,
+.childrenproductoto_fee span {
+  font-weight: 500;
+}
+
+.childrenproductoto_btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.childrenproductoto_btn_buy {
+  display: flex;
+  align-items: center;
+}
+.childrenproductoto_btn_buy input {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+}
+
+.childrenproductoto_btn_detail {
+  display: flex;
+  align-items: center;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+.childrenproductoto_btn_detail p {
+  margin-right: 8px;
+}
+
+.disabled_productoto {
+  pointer-events: none;
+  opacity: 0.5;
+}/*# sourceMappingURL=ChildrenProductOto.css.map */

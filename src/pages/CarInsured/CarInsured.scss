@@ -1,0 +1,41 @@
+.carinsurance {
+    background-color: #cccccc4c;
+}
+.carinsurance_main {
+    width: 100%;
+    max-width: 1048px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px;
+}
+.carinsurance_c {
+    margin-top: 12px;
+}
+
+.carinsurance_cost {
+    display: flex;
+}
+.carinsurance_cost_p1 {
+    width: 65%;
+}
+.carinsurance_table {
+    margin-left: 24px;
+    background-color: #fff;
+    height: max-content;
+    padding: 24px;
+    border-radius: 8px;
+}
+.carinsurance_table_heading {
+    display: flex;
+    span {
+        color: #ccccccf8;
+    }
+}
+.carinsurance_table_fee {
+    margin: 12px 0;
+}
+.carinsurance_table_btn {
+}
+.carinsurance_table_btn_btn {
+    width: 100%;
+}

@@ -1,0 +1,45 @@
+.productItem_header {
+  font-size: 18px;
+  margin-bottom: 2px;
+  height: 54px;
+}
+
+.productItem_des {
+  color: #667085;
+  height: 96px;
+}
+
+.productItem_more .productItem_more_btn {
+  padding: 16px 0;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.productItem_advans {
+  padding: 4px 0 0;
+  margin-bottom: 16px;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.productItem_advan {
+  color: #1d2939;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: flex-start;
+}
+.productItem_advan p {
+  max-width: 86%;
+}
+
+.productItem_advan_icon {
+  color: var(--primary-color);
+  margin-right: 12px;
+}
+
+.productItem_advans_btn {
+  width: 100%;
+}/*# sourceMappingURL=ChildrenProductHome.css.map */

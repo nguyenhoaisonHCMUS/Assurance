@@ -1,0 +1,111 @@
+.bg_condition {
+  height: 400px;
+  margin-top: -5px;
+  margin-bottom: 70px;
+}
+
+.condition {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 18px;
+  top: -90px;
+  width: 95%;
+  max-width: 1048px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 32px;
+  box-shadow: 0px -1px 3px 2px #ccc;
+  margin-top: 40px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .condition {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    display: block;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .condition {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    display: block;
+  }
+}
+
+.condition_header {
+  margin-right: 20px;
+  min-width: 28%;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .condition_header {
+    margin-right: 0;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .condition_header {
+    margin-right: 0;
+    text-align: center;
+  }
+}
+
+.condition_more {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.condition_more > :first-child::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(204, 204, 204, 0.2980392157);
+  bottom: 206px;
+}
+.condition_more > :nth-child(2)::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(204, 204, 204, 0.2980392157);
+  bottom: 31px;
+}
+
+.condition_more_item {
+  display: flex;
+  width: 50%;
+  margin-bottom: 20px;
+  margin-top: 12px;
+  width: 100%;
+  align-items: center;
+}
+
+.condition_more_paicon {
+  padding: 10px;
+  border-radius: 13px;
+  background-color: #fef7f3;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-right: 8px;
+}
+
+.condition_more_heading {
+  font-weight: 600;
+  font-size: 20px;
+  color: #1d2939;
+  line-height: 24px;
+  margin: 16px 0 4px;
+}
+
+.condition_more_content {
+  line-height: 24px;
+  font-size: 16px;
+  display: block;
+}
+
+.condition_more_icon {
+  color: var(--primary-color);
+}/*# sourceMappingURL=Condition.css.map */

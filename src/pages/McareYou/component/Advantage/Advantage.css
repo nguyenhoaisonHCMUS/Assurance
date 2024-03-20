@@ -1,0 +1,108 @@
+.bg_advans {
+  position: relative;
+  height: 400px;
+  background-color: rgba(204, 204, 204, 0.2980392157);
+  margin-top: -5px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .bg_advans {
+    height: auto !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .bg_advans {
+    height: auto !important;
+  }
+}
+
+.advantages {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 18px;
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 95%;
+  max-width: 1048px;
+  padding: 40px;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .advantages {
+    position: static !important;
+    transform: translate(0) !important;
+    width: 100% !important;
+    border-radius: 0 !important;
+    display: block !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .advantages {
+    position: static !important;
+    transform: translate(0) !important;
+    width: 100% !important;
+    border-radius: 0 !important;
+    display: block !important;
+  }
+}
+
+.advans_header {
+  margin-right: 20px;
+  min-width: 28%;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .advans_header {
+    margin-right: 0 !important;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .advans_header {
+    margin-right: 0 !important;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+}
+
+.advans_more {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.advans_more_s {
+  flex: 1;
+  display: flex;
+}
+
+.advans_more_item {
+  display: flex;
+  width: 50%;
+  margin-bottom: 20px;
+  margin-top: 12px;
+}
+
+.advans_more_paicon {
+  padding: 10px;
+  border-radius: 13px;
+  background-color: #fef7f3;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-right: 8px;
+  color: var(--primary-color);
+}
+
+.advans_more_heading {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 16px 0 4px;
+}
+
+.advans_more_content {
+  line-height: 24px;
+  font-size: 16px;
+}/*# sourceMappingURL=Advantage.css.map */

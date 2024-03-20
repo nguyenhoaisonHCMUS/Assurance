@@ -1,0 +1,82 @@
+.automobilematerial {
+  width: 100%;
+  max-width: 1048px;
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.automobilematerial_heading {
+  margin-bottom: 20px;
+}
+
+.automobilematerial_main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.automobilematerial_main_heading {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.automobilematerial_main_kd {
+  width: 100%;
+}
+
+.automobilematerial_main_radio {
+  display: flex;
+}
+
+.automobilematerial_main_no,
+.automobilematerial_main_yes {
+  display: flex;
+  margin-right: 12px;
+}
+.automobilematerial_main_no input,
+.automobilematerial_main_yes input {
+  margin-right: 6px;
+}
+
+.automobilematerial_main_set {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.automobilematerial_main_cartype,
+.automobilematerial_main_time,
+.automobilematerial_main_seat,
+.automobilematerial_main_fee {
+  width: 50%;
+  margin-top: 16px;
+}
+.automobilematerial_main_cartype input,
+.automobilematerial_main_time input,
+.automobilematerial_main_seat input,
+.automobilematerial_main_fee input {
+  width: 90%;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 1.6rem;
+  border-radius: 6px;
+}
+.automobilematerial_main_cartype > p,
+.automobilematerial_main_time > p,
+.automobilematerial_main_seat > p,
+.automobilematerial_main_fee > p {
+  margin-bottom: 6px;
+}
+
+.automobilematerial_main_seat input,
+.automobilematerial_main_fee input {
+  background-color: rgba(204, 204, 204, 0.2980392157);
+}
+
+.automobilematerial_cost {
+  display: flex;
+  justify-content: end;
+  margin-top: 12px;
+  background-color: rgba(204, 204, 204, 0.2980392157);
+  border-radius: 8px;
+  padding: 6px 10px;
+}/*# sourceMappingURL=AutomobileMaterial.css.map */

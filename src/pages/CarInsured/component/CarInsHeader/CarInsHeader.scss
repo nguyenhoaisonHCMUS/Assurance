@@ -1,0 +1,34 @@
+.cartnsheader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cartnsheader_step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+    position: relative;
+}
+.cartnsheader_step_number {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    border: 1px solid #ccc;
+    p {
+        text-align: center;
+        color: var(--primary-color);
+    }
+}
+.cartnsheader_step_name {
+    margin-top: 8px;
+}
+.cartnsheader_step_line {
+    position: absolute;
+    width: 85%;
+    height: 1px;
+    background-color: var(--primary-color);
+    top: 25%;
+    left: 58%;
+}
