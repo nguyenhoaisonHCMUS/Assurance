@@ -9,7 +9,7 @@ import { formatNumberWithDots } from '../../utils/funcs';
 import Button from '../../component/Button/Button';
 
 function CarInsured() {
-    const [carComp, setCarComp] = useState(null);
+    // const [carComp, setCarComp] = useState(null);
 
     // useEffect(() => {
     //     const fetchApi = async () => {
@@ -20,18 +20,22 @@ function CarInsured() {
     // });
     const location = useLocation();
     const data = location.state && location.state.data;
-    const { trachnhiemdansu, vatchatoto, phu } = data || {};
+    // const { trachnhiemdansu, vatchatoto, phu } = data || {};
     const [cost, setCost] = useState(0);
+
+    const handleSetCost = (cost_x) => {
+        setCost(cost_x);
+    };
 
     return (
         <div className="carinsurance">
             <div className="carinsurance_main">
                 <CarInsHeader />
                 <div className="carinsurance_cost">
-                    <dic className="carinsurance_cost_p1">
-                        <AutomobileMaterial />
+                    <div className="carinsurance_cost_p1">
+                        <AutomobileMaterial onEstimateCost={handleSetCost} />
                         <CarMore />
-                    </dic>
+                    </div>
                     <div className="carinsurance_table">
                         <div className="carinsurance_table_heading">
                             <p>Tổng phí:</p>

@@ -1,0 +1,43 @@
+.contactform {
+}
+.contactform_heading {
+    margin-bottom: 24px;
+}
+.contactform_form {
+    margin-top: 12px;
+}
+.contactform_phonemail {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    > div {
+        width: 45%;
+    }
+}
+
+.contactform_field,
+.contactform_submitbtn {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.contactform_field {
+    width: 100%;
+}
+.contactform_submit {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+.contactform_submitbtn {
+    min-width: 120px;
+    font-size: 16px;
+    background-color: var(--primary-color);
+    color: white;
+
+    &:hover {
+        opacity: 0.9;
+        cursor: pointer;
+    }
+}

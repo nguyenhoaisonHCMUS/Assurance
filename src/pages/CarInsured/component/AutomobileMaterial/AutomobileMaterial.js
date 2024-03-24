@@ -1,20 +1,116 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './AutomobileMaterial.scss';
 import CarList from '../CarList/CarList';
 import { formatNumberWithDots } from '../../../../utils/funcs';
 
-function AutomobileMaterial() {
+const carmodel = [];
+
+function AutomobileMaterial({ onEstimateCost }) {
     const [kd, setKd] = useState('no');
     const [carType, setCarType] = useState('');
     const [carBrand, setCarBrand] = useState('');
     const [carModel, setCarModel] = useState('');
+    const [carModels, setCarModels] = useState([]);
 
     const [registrationDate, setRegistrationDate] = useState('');
     const [insuranceStartDate, setInsuranceStartDate] = useState('');
-    const [numberOfSeats, setNumberOfSeats] = useState('');
+    const [numberOfSeats, setNumberOfSeats] = useState(5);
     const [insuranceEndDate, setInsuranceEndDate] = useState('');
 
     const [cost, setCost] = useState(0);
+
+    const handleSetCarType = (cartype) => {
+        setCarType(cartype);
+    };
+    const handleSetCarBrand = (carbrand) => {
+        setCarBrand(carbrand);
+    };
+    const handleSetCarModel = (carmodel) => {
+        setCarModel(carmodel);
+    };
+
+    // console.log(carType);
+
+    useEffect(() => {
+        switch (carBrand) {
+            case 'BMW':
+                setCarModels(['A1', 'A2']);
+                break;
+            case 'Audi':
+                setCarModels(['B3', 'B2']);
+                break;
+            case 'Benley':
+                setCarModels(['C1', 'C2']);
+                break;
+            default:
+                break;
+        }
+    }, [carBrand]);
+
+    useEffect(() => {
+        // Chỉ tính phí khi cả ba trường đều được chọn
+        if (carType && carBrand && carModel) {
+            let newCost = 0;
+            switch (carType) {
+                case 'Bán tải':
+                    newCost += 1000000;
+                    break;
+                case 'Xe thương mại':
+                    newCost += 1500000;
+                    break;
+                case 'Xe chuyên chở':
+                    newCost += 2000000;
+                    break;
+                default:
+                    break;
+            }
+
+            switch (carBrand) {
+                case 'BMW':
+                    switch (carModel) {
+                        case 'A1':
+                            newCost += 500000;
+                            break;
+                        case 'A2':
+                            newCost += 600000;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case 'Audi':
+                    switch (carModel) {
+                        case 'B3':
+                            newCost += 700000;
+                            break;
+                        case 'B2':
+                            newCost += 500000;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case 'Benley':
+                    switch (carModel) {
+                        case 'C1':
+                            newCost += 900000;
+                            break;
+                        case 'C2':
+                            newCost += 1000000;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            // Cập nhật giá trị của state cost
+            onEstimateCost(newCost);
+            setCost(newCost);
+        }
+    }, [carType, carBrand, carModel]);
 
     // Function to calculate insurance end date
     const calculateInsuranceEndDate = (startDate) => {
@@ -66,15 +162,15 @@ function AutomobileMaterial() {
                 <div className="automobilematerial_main_set">
                     <div className="automobilematerial_main_cartype">
                         <p>Kiểu loại xe</p>
-                        <CarList data={['Benley', 'Audi', 'BMW']} />
+                        <CarList data={['Bán tải', 'Xe thương mại', 'Xe chuyên chở']} onCheckType={handleSetCarType} />
                     </div>
                     <div className="automobilematerial_main_cartype">
                         <p>Hãng xe</p>
-                        <CarList data={['Benley', 'Audi', 'BMW']} />
+                        <CarList data={['Benley', 'Audi', 'BMW']} onCheckType={handleSetCarBrand} />
                     </div>
                     <div className="automobilematerial_main_cartype">
                         <p>Dòng xe/Hiệu xe</p>
-                        <CarList data={['Benley', 'Audi', 'BMW']} />
+                        <CarList data={carModels} onCheckType={handleSetCarModel} />
                     </div>
                     <div className="automobilematerial_main_time">
                         <p>Ngày đăng ký xe lần đầu</p>
@@ -106,7 +202,7 @@ function AutomobileMaterial() {
                     </div>
                 </div>
             </div>
-            <div className="automobilematerial_cost">Phí: {cost === 0 ? '--' : formatNumberWithDots(cost)}</div>
+            <div className="automobilematerial_cost">Phí: {cost === 0 ? '--' : `${formatNumberWithDots(cost)}đ`}</div>
         </div>
     );
 }

@@ -57,7 +57,9 @@ function OtoBM() {
             <ListSlide slides={slides} />
 
             <Advantage />
-            <ProductListOto products={products} />
+            <div id="mcareyou_product">
+                <ProductListOto products={products} />
+            </div>
 
             <Apart className="home_buystep" src={imgs.step_img} heading="Mua bảo hiểm trực tuyến dễ dàng với 4 bước">
                 <div className="home_buystep_steps">

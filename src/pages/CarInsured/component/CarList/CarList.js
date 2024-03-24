@@ -3,12 +3,15 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { useState, useRef, useEffect } from 'react';
 
-function CarList({ className, icon, data }) {
+function CarList({ className, icon, data, onCheckType }) {
     const [carCompName, setCarCompName] = useState('');
     const [show, setShow] = useState(false);
     const popupRef = useRef();
 
     const handleCarCompName = (e) => {
+        if (onCheckType) {
+            onCheckType(e.target.innerText);
+        }
         setCarCompName(e.target.innerText);
         setShow(false);
     };

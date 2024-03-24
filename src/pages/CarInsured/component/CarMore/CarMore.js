@@ -3,7 +3,7 @@ import { formatNumberWithDots } from '../../../../utils/funcs';
 import { ChevronRight } from '../../../../assets/icons';
 import './CarMore.scss';
 
-function CarMore({ number }) {
+function CarMore({ number, onSetCost }) {
     const [cost, setCost] = useState(10000000);
     const [show, setShow] = useState(false);
 
@@ -53,7 +53,10 @@ function CarMore({ number }) {
                                 max={500000000}
                                 value={cost}
                                 step={10000000}
-                                onChange={(e) => setCost(parseInt(e.target.value))}
+                                onChange={(e) => {
+                                    onSetCost(parseInt(e.target.value));
+                                    setCost(parseInt(e.target.value));
+                                }}
                             />
                         </div>
                     </div>
